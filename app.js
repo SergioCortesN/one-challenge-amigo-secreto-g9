@@ -1,7 +1,11 @@
-let nombresIngresados = [];
+let amigos = [];
 
 function agregarAmigo(){
-    nombresIngresados.push(document.getElementById("amigo").value);
-    document.getElementById("listaAmigos").innerHTML += "<li>" + document.getElementById("amigo").value + "</li>";
-    document.getElementById("amigo").value = "";
+    if(document.getElementById("amigo").value === ""){
+        alert("Por favor, ingresa un nombre.");
+        return;
+    } else {
+        amigos.push(document.getElementById("amigo").value)
+        document.getElementById("amigo").value = "";
+    }
 }
