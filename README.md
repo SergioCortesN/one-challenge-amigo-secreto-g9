@@ -23,14 +23,15 @@ function agregarAmigo(){
     }
 }
 ```
-3. Creación de la funcion `mostrarAmigos`, permite vizualizar la lista de amigos que se van agregando al momento de dar clic en el boton añadir, como se mostro en el fragmento anterior, se agrego dentro del else tras verificar que el input no esta vacio
+3. Creación de la funcion `mostrarAmigos`, permite vizualizar la lista de amigos que se van agregando al momento de dar clic en el boton añadir, como se mostro en el fragmento anterior, se agrego dentro del else tras verificar que el input no esta vacio. Ademas se añade un boton para eliminar a un amigo de la lista.
 
 ```js
 function mostrarAmigos(){
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""; 
     for (let index = 0; index < amigos.length; index++) {
-        lista.innerHTML += `<li>${amigos[index]}</li>`;
+        lista.innerHTML += `<li>${amigos[index]} <button class="button-delete" onclick="eliminarAmigo(${index})"> 
+        <img src="assets/icon_delete.png" width="20" height="20"> </button> </li>`
     }
 }
 ```
@@ -61,5 +62,12 @@ function reiniciar(){
     document.getElementById("listaAmigos").innerHTML = "";
     document.getElementById("resultado").innerHTML = "";
     document.getElementById("amigo").value = "";
+}
+```
+6. Se añaden mejoras a la lista de amigos permitiendo borrar a un amigo de la lista, ademas se agregaron estilo y validaciones para darle un poco mas de realismo al ingresar el nombre de un amigo
+```js
+function eliminarAmigo(index){
+    amigos.pop(index);
+    mostrarAmigos();
 }
 ```
