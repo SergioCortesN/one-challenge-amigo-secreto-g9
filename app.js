@@ -29,3 +29,10 @@ function sortearAmigo(){
         document.getElementById("resultado").innerHTML = `el amigo secreto es: ${amigos[indiceAleatorio]}`;
     }
 }
+
+function reiniciar(){
+    amigos = [];
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
+    document.getElementById("amigo").value = "";
+}
