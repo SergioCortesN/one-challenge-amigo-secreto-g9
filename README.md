@@ -54,3 +54,12 @@ function sortearAmigo(){
     }
 }
 ```
+5. Se agrego un boton de reiniciar junto con su funcion para reiniciar los valores y comenzar de nuevo
+```js
+function reiniciar(){
+    amigos = [];
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
+    document.getElementById("amigo").value = "";
+}
+```
