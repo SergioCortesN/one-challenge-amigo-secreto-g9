@@ -15,7 +15,8 @@ function mostrarAmigos(){
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""; 
     for (let index = 0; index < amigos.length; index++) {
-        lista.innerHTML += `<li>${amigos[index]}</li>`;
+        lista.innerHTML += `<li>${amigos[index]} <button class="button-delete" onclick="eliminarAmigo(${index})"> 
+        <img src="assets/icon_delete.png" width="20" height="20"> </button> </li>`
     }
 }
 
@@ -25,7 +26,7 @@ function sortearAmigo(){
         return;
     }else {
         document.getElementById("listaAmigos").innerHTML = "";
-        let indiceAleatorio = Math.floor(Math.random() * amigos.length-1);
+        let indiceAleatorio = Math.floor(Math.random() * (amigos.length-1));
         document.getElementById("resultado").innerHTML = `el amigo secreto es: ${amigos[indiceAleatorio]}`;
     }
 }
